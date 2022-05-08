@@ -1,7 +1,7 @@
 export default [
     {
       id: 1,
-      url: "https://metro.co.uk/wp-content/uploads/2015/05/pokemon_crying.gif?quality=90&strip=all&zoom=1&resize=500%2C284",
+      url: "https://media.giphy.com/media/dgg13lkNAUa5eibLiY/giphy.gif",
       message: "",
       timestamp: "12/21/2021, 4:33:21 PM",
       addressFrom: "0xCF8e569A97C423952DdFf902375C7C76549A6A90",
@@ -28,7 +28,7 @@ export default [
     },
     {
       id: 4,
-      url: "https://i.pinimg.com/originals/68/a0/9e/68a09e774e98242871c2db0f99307420.gif",
+      url: "https://media.giphy.com/media/eoxomXXVL2S0E/giphy.gif",
       message: "",
       timestamp: "12/21/2021, 4:33:21 PM",
       addressFrom: "0xCF8e569A97C423952DdFf902375C7C76549A6A90",
@@ -46,7 +46,7 @@ export default [
     },
     {
       id: 6,
-      url: "https://www.omnisend.com/blog/wp-content/uploads/2016/09/funny-gifs-9.gif",
+      url: "https://media.giphy.com/media/3o6wNShStUcIeRJCKs/giphy.gif",
       message: "",
       timestamp: "12/21/2021, 4:33:21 PM",
       addressFrom: "0xCF8e569A97C423952DdFf902375C7C76549A6A90",
