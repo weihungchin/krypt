@@ -3,11 +3,13 @@ import { AiOutlineClose } from 'react-icons/ai';
 
 import logo from '../../images/logo.png';
 import { useState } from 'react';
+import { navLinkItems } from '../utils/constants';
+import { IconContainer } from '../globals/Globals';
 
-const NavBarItem = ({ title, classProps }: { title: string, classProps?: string }) => {
+const NavBarItem = ({ title, classProps, link }: { title: string, classProps?: string, link: string }) => {
     return (
         <li className={`mx-4 cursor-pointer ${classProps}`}>
-            {title}
+            <a href={link} target="_blank" aria-label={title}> {title}</a>
         </li>
     )
 }
@@ -20,30 +22,36 @@ const Navbar = () => {
                 <img src={logo} alt="logo" className="w-32 cursor-pointer" />
             </div>
             <ul className="text-white hidden md:flex flex-row list-none justify-between items-center flex-initial">
-                {["Market", "Exchange", "Tutorials", "Wallets"].map(
-                    (item, index) => (
-                        <NavBarItem key={item + index} title={item} />
+                {navLinkItems.map(
+                    (item) => (
+                        <NavBarItem key={item.title} title={item.title} link={item.link} />
                     )
                 )}
-
-                <li className="bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]">
-                    {toggleMenu.toString()}
-                </li>
             </ul>
             <div className="flex relative">
 
-                {toggleMenu ? <AiOutlineClose size={28} className="text-white cursor-pointer" onClick={() => setToggleMenu(false)} />
-                    : <HiMenuAlt4 size={28} className="text-white cursor-pointer" onClick={() => setToggleMenu(true)} />}
+                {toggleMenu && (
+                    <IconContainer className="text-white md:hidden cursor-pointer" onClick={() => setToggleMenu(false)} >
+                        <AiOutlineClose size={28} />
+                    </IconContainer>
+                )}
+                {!toggleMenu && (
+                    <IconContainer className="text-white md:hidden cursor-pointer" onClick={() => setToggleMenu(true)}>
+                        <HiMenuAlt4 size={28} />
+                    </IconContainer>
+                )}
 
                 {toggleMenu && (
                     <ul className="z-10 fixed -top-0 -right-2 p-3 w-[70vw] h-screen shadow-2xl md:hidden list-none
                         flex flex-col justify-start items-end rounded-md blue-glassmorphism text-white animate-slide-in">
                         <li className="text-xl w-full my-2">
-                            <AiOutlineClose onClick={() => setToggleMenu(false)} />
+                            <IconContainer onClick={() => setToggleMenu(false)}>
+                                <AiOutlineClose />
+                            </IconContainer>
                         </li>
-                        {["Market", "Exchange", "Tutorials", "Wallets"].map(
-                            (item, index) => (
-                                <NavBarItem key={item + index} title={item} classProps="text-lg my-lg" />
+                        {navLinkItems.map(
+                            (item) => (
+                                <NavBarItem key={item.title} title={item.title} link={item.link} />
                             )
                         )}
                     </ul>

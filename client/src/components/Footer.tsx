@@ -9,9 +9,9 @@ const Footer = () => {
                 </div>
                 <div className="flex flex-1 justify-evenly items-center flex-wrap sm:mt-0 mt-5 w-full">
                     <p className="text-base text-white text-center mx-2 cursor-pointer">Market</p>
-                    <p className="text-base text-white text-center mx-2 cursor-pointer">Exchange</p>
-                    <p className="text-basetext-white text-center mx-2 cursor-pointer">Tutorials</p>
+                    <p className="text-base text-white text-center mx-2 cursor-pointer">Tutorials</p>
                     <p className="text-base text-white text-center mx-2 cursor-pointer">Wallets</p>
+                    <p className="text-base text-white text-center mx-2 cursor-pointer">News</p>
                 </div>
             </div>
 
